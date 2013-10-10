@@ -1,0 +1,14 @@
+{% block title %}Create an account{% endblock %}
+
+
+{% block content %}
+  <h1>Create an account</h1>
+
+  <form action="" method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+
+      <div><input type="submit" value="Create the account" /></div>
+
+  </form>
+{% endblock %}
