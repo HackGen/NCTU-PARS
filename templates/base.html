@@ -7,19 +7,51 @@
         <meta name="author" content="dv">
         <meta name="keywords" content="NCTU, CCCA, NBA">
         <meta name="description" content="Reg_Sys, NCTU.">
-        <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.css">
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"> </script>
+        <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"> </script>
         {% block head %} {% endblock %}
     </head>
 
     <body>
-        <div class="content">
-            {% block content %}
-            {% endblock %}
-        </div>
+    <div class="navbar navbar-default navbar-static-top">
+        <div  class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="../">PARS</a>
+            </div>
 
-        <footer>
-                <p>&copy; 2013, NCTU.</p>
-        </footer>
+            <div class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+              </ul>
+
+              <ul class="nav navbar-nav navbar-right">
+                <li><a href="../signup/">Signup</a></li>
+              </ul>
+            </div>
+        </div>
+    </div>
+
+
+        <!-- the bootstrap container --->
+        <div class="container">
+            <div id="logo">
+                <img src="">
+            </div>
+            <div class="content">
+                {% block content %}
+                {% endblock %}
+            </div>
+
+            <footer>
+                    <p>&copy; 2013, NCTU.</p>
+            </footer>
+        </div>
 
     </body>
 
