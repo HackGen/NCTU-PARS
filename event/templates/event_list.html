@@ -1,0 +1,28 @@
+{%extends "event_base.html" %}
+{% block content %}
+<div>
+    <div class="navigation">
+    {% if event_list.has_next %}
+        <div><a href="?page={{ event_list.next_page_number }}" >&laquo; Next Entries </a></div>												
+    {% endif %}
+    {%if event_list.has_previous %}
+        <div><a href="?page={{ event_list.previous_page_number }}" >Previous Entries &raquo;</a></div>
+    {% endif %}
+    </div>
+    <ul>
+        {% for object in event_list.object_list %}
+        <li>
+            <a href="{{ object.get_absolute_url }}">event  {{ object.id }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+    <div class="navigation">
+    {% if event_list.has_next %}
+        <div><a href="?page={{ event_list.next_page_number }}" >&laquo; Next Entries </a></div>												
+    {% endif %}
+    {%if event_list.has_previous %}
+        <div><a href="?page={{ event_list.previous_page_number }}" >Previous Entries &raquo;</a></div>
+    {% endif %}
+    </div>
+</div>
+{% endblock content %}

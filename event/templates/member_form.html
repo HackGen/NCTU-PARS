@@ -1,0 +1,9 @@
+{%extends "member_base.html" %}
+{% block content %}
+<form action="" method="post">
+    {{ member_form.as_p }}
+    <p>
+        <input type="submit" value="save member" />
+    </p>
+</form>
+{% endblock content %}

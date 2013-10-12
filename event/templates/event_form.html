@@ -1,0 +1,9 @@
+{%extends "event_base.html" %}
+{% block content %}
+<form action="" method="post">
+    {{ event_form.as_p }}
+    <p>
+        <input type="submit" value="save event" />
+    </p>
+</form>
+{% endblock content %}

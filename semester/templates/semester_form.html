@@ -1,0 +1,9 @@
+{%extends "semester_base.html" %}
+{% block content %}
+<form action="" method="post">
+    {{ semester_form.as_p }}
+    <p>
+        <input type="submit" value="save semester" />
+    </p>
+</form>
+{% endblock content %}
