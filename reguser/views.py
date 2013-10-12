@@ -54,3 +54,10 @@ def RegLogin(request):
             #WTD
             return HttpResponseRedirect('/signup/')
     return render_to_response('index.html', {'user': request.user}, context_instance=RequestContext(request))
+
+def RegLogout(request):
+    try:
+        logout(request)
+    except:
+        pass
+    return HttpResponseRedirect('/')
