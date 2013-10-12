@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block head %}
+    <title>Contact</title>
+{% endblock %}
+
+{% block content %}
+    <h4>You'd like to reach out to us?</h4>
+    <h3>please mail to </h3><pre>contact@pars.nctucs.net</pre>
+
+    <img src="http://i.imgur.com/dE7r7CC.png">
+    <form class="well span8" action="" method="post"> {% csrf_token %}
+      <div class="row-fluid">
+            <div class="span3">
+                <label>First Name</label>
+                <input type="text" class="span3" name='first_name' placeholder="Your First Name">
+                <label>Last Name</label>
+                <input type="text" class="span3" name='last_name' placeholder="Your Last Name">
+            </div>
+            <div class="span5"
+                <label>Email Address</label>
+                <input type="text" class="span3" name='email' placeholder="Your email address">
+                <label>Subject
+                <select id="subject" name="subject" class="span3">
+                    <option value="na" selected="">Choose One:</option>
+                    <option value="general">General</option>
+                    <option value="contest_issues">Contest issues</option>
+                    <option value="suggestions">suggestions</option>
+                </select>
+                </label>
+            </div>
+            <div class="span">
+                <label>Message</label>
+                <textarea name="message" id="message" class="input-xlarge span5" rows="10"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary pull-right">Send</button>
+        </div>
+    </form>
+{% endblock %}
