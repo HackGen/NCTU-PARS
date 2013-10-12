@@ -56,4 +56,8 @@ def process_Contact(request):
 
     ci=RequestContext(request)
     ci['error'] = err
+    ci['first_name'] = request.POST.get('first_name', '')
+    ci['last_name'] = request.POST.get('last_name', '')
+    ci['email'] = request.POST.get('email', '')
+    ci['message'] = request.POST.get('message', '')
     return render_to_response('contact.html', context_instance=ci)
