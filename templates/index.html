@@ -1,9 +1,37 @@
-{% extends "base.html" %}
+{% extends "master.html" %}
 
-{% block head %}
-    <title>Index</title>
+{% block HTML_HEAD %}
+<title>NCTU 報名系統</title>
 {% endblock %}
 
 {% block content %}
-    <img src="http://i.imgur.com/ATribo7.png">
+<section class="hiddable">
+
+</section>
+
+<section class="signin-side-bar">
+    <h1>Sign In</h1>
+    <form action="" method="post">
+        {% csrf_token %}
+        <ul>
+            <li>
+                <label for="username">Username</label>
+                <input type="email" id="username" name='username'>
+            </li>
+
+            <li>
+                <label for="password">Password</label>
+                <input type="password" id="password" name='password'>
+            </li>
+        </ul>
+        <div class="option-bar">
+            <input type="submit" value="Sign In" class="right">
+        </div>
+    </form>
+
+    <div class="signin-caption">
+        <a href="" class="btn">Reset Password</a>
+        <a href="" class="btn">Register</a>
+    </div>
+</section>
 {% endblock %}
