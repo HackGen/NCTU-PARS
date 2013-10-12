@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <!--[if IE]><script src="{{STATIC_URL}}js/html5shiv.js"></script><![endif]-->
+        <!--[if lt IE 7]><script src="{{STATIC_URL}}js/IE7.js"></script><![endif]-->
+        <!--[if lt IE 8]><script src="{{STATIC_URL}}js/IE8.js"></script><![endif]-->
+        <!--[if lt IE 9]><script src="{{STATIC_URL}}js/IE9.js"></script><![endif]-->
+        <link rel="stylesheet" href="{{STATIC_URL}}css/main.css">
+        <meta name="viewport" content="initial-scale = 1.0,maximum-scale = 1.5">
+        {% block HTML_HEAD %}{% endblock %}
+    </head>
+    <body>
+        
+        <header>
+            <div class="global-logo"><a href=""><span>NCTU Signup Service</span></a></div>
+            <div class="global-nav">
+                <ul>
+                    <li><a href="">Register</a></li>
+                    <li><a href="">English</a></li>
+                </ul>
+            </div>
+        </header>
+        
+        <div class="wrapper">
+            {% block content %}{% endblock %}
+        </div>
+        
+        <footer>
+            <div class="global-copyright">&copy; 2013, National Chiao Tung University.</div>
+            <ul class="global-legal-documents">
+                <li><a href="">Privacy</a></li>
+                <li><a href="">Terms</a></li>
+            </ul>
+        </footer>
+        
+    </body>
+</html>
