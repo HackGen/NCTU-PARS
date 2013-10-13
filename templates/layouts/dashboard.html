@@ -1,0 +1,15 @@
+{% extends "layouts/masterA.html" %}
+
+{% block HTML_HEAD %}{% endblock %}
+
+{% block HTML_BODY %}
+    <div class="wrapper dashboard">
+        <section class="menu">
+            {% block MENU %}{% endblock %}
+        </section>
+        
+        <div class="panel">
+            {% block CONTENT %}{% endblock %}
+        </div>
+    </div>
+{% endblock %}
