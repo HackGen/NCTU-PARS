@@ -1,10 +1,11 @@
-{% extends "base.html" %}
+{% extends "master.html" %}
 
-{% block head %}
+{% block HTML_HEAD %}
     <title>Contact</title>
 {% endblock %}
 
 {% block content %}
+<section>
     <h4>You'd like to reach out to us?</h4>
     <h3>please mail to </h3><pre>contact@pars.nctucs.net</pre>
 
@@ -13,32 +14,35 @@
     {% endif %}
 
     <img src="http://i.imgur.com/dE7r7CC.png">
-    <form class="well span8" action="" method="post"> {% csrf_token %}
-      <div class="row-fluid">
-            <div class="span3">
+    <form action="" method="post"> {% csrf_token %}
+        <ul>
+            <li>
                 <label>First Name</label>
                 <input type="text" class="span3" name='first_name' value="{{ first_name }}" placeholder="Your First Name">
+            </li>
+            <li>
                 <label>Last Name</label>
                 <input type="text" class="span3" name='last_name' value="{{ last_name }}" placeholder="Your Last Name">
-            </div>
-            <div class="span5">
+            </li>
+            <li>
                 <label>Email Address</label>
                 <input type="text" class="span3" name='email' value="{{ email }}" placeholder="Your email address">
-                <label>Subject
+            </li>
+            <li>
+                <label>Subject</label>
                 <select id="subject" name="subject" class="span3">
                     <option value="na" selected="">Choose One:</option>
                     <option value="General">General</option>
                     <option value="Contest_issues">Contest issues</option>
                     <option value="Suggestions">suggestions</option>
                 </select>
-                </label>
-            </div>
-            <div class="span">
+            </li>
+            <li>
                 <label>Message</label>
                 <textarea name="message" id="message" class="input-xlarge span5" rows="10">{{ message }}</textarea>
-            </div>
-
-            <button type="submit" class="btn btn-primary pull-right">Send</button>
-        </div>
+            </li>
+        </ul>
+            <input type="submit" value="Send">
     </form>
+</section>
 {% endblock %}

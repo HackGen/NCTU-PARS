@@ -31,8 +31,8 @@
               </ul>
                   <ul class="nav navbar-nav navbar-right">
               {% if user.is_authenticated %}
-                    <li><a href="/logout">Loout</a></li>
-                    <li>{{ user.username }}</li>
+                    <li><a href="/logout">Logout</a></li>
+                    <li><a href='/dashboard'> {{ user.username }}</a></li>
               {% else %}
                     <li><a href="/signup/">Signup</a></li>
                     <li><a href="/">Login</a></li>
