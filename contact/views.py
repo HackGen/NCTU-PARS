@@ -40,7 +40,7 @@ def process_Contact(request):
     if request.method == 'POST':
         if parm_is_valid(request.POST):
             mail_sub = u"[PARS] {}".format(request.POST['subject'])
-            mail_msg = u"User {} {} from {} said:\n  {}".format(
+            mail_msg = u"User {} {} from {} said:\n\n\n  {}".format(
                                                request.POST['first_name'],
                                                request.POST['last_name'],
                                                request.POST['email'],
