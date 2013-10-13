@@ -1,15 +1,10 @@
-{% extends "master.html" %}
+{% extends "layouts/right-col.html" %}
 
 {% block HTML_HEAD %}
 <title>NCTU 報名系統</title>
 {% endblock %}
 
-{% block content %}
-<section class="hiddable">
-
-</section>
-
-<section class="signin-side-bar">
+{% block CONTENT %}
     <h1>Sign In</h1>
     <form action="" method="post">
         {% csrf_token %}
@@ -30,8 +25,7 @@
     </form>
 
     <div class="signin-caption">
-        <a href="" class="btn">Reset Password</a>
+        <a href="{% url 'resetpw' %}" class="btn">Reset Password</a>
         <a href="{% url 'signup:signup' %}" class="btn">Register</a>
     </div>
-</section>
 {% endblock %}

@@ -8,6 +8,8 @@ from django.contrib.auth.forms import UserCreationForm
 from django.forms import ModelForm
 from reguser.models import RegUser
 
+from django.contrib.auth.forms import ReadOnlyPasswordHashField
+
 #class Department():
 
 class RegForm(ModelForm):
@@ -19,7 +21,7 @@ class RegForm(ModelForm):
         widgets = {
             #'username'  : forms.EmailInput(),
             'password'  : forms.PasswordInput(),
-            'password1' : forms.PasswordInput(),
+            'password1' : ReadOnlyPasswordHashField(),
             'password2' : forms.PasswordInput(),
             #'end_time'  : forms.SelectDateWidget(),
         }

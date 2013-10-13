@@ -15,6 +15,13 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
 
 def signup(request):
+
+    #print to string
+    u = "%s" % request.user
+
+    if u != 'AnonymousUser':
+        return HttpResponseRedirect("/dashboard")
+
     if request.method == 'POST':
         form = RegForm(request.POST)
         if form.is_valid():
@@ -40,6 +47,13 @@ def signup(request):
     return render_to_response('signup.html', {'form': form}, context_instance=RequestContext(request))
 
 def RegLogin(request):
+
+    #print to string
+    u = "%s" % request.user
+
+    if u != 'AnonymousUser':
+        return HttpResponseRedirect("/dashboard")
+
     logout(request)
     username = password = ''
     if request.POST:
