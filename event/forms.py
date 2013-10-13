@@ -1,18 +1,23 @@
 # -*- coding: utf-8 -*-
 
-from django import forms
+from django.forms import ModelForm
 
-from models import *
+from models import Event, Member
+
+from models import TempeEvent
 
 
-class EventForm(forms.ModelForm):
+class EventForm(ModelForm):
     class Meta:
         model = Event
 
 
-class MemberForm(forms.ModelForm):
+
+class MemberForm(ModelForm):
     class Meta:
         model = Member
 
 
-
+class TempEventForm(ModelForm):
+    class Meta:
+        model = TempEvent

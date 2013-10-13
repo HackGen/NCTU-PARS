@@ -1,0 +1,46 @@
+{% extends "master.html" %}
+
+{% block HTML_HEAD %}
+<title>NCTU 報名系統</title>
+{% endblock %}
+
+{% block content %}
+<nav class="left-side-bar">
+    <ul>
+        <li><a href="">Overview</a></li>
+        <li><a href="">Accounts</a></li>
+        <li class="active"><a href="">Accounts</a></li>
+    </ul>
+</nav>
+
+<div class="content">
+    <section>
+        <h1>Registed Events</h1>
+        <table>
+            <thead>
+                <tr>
+                    <td>Event Title</td>
+                    <td>Date</td>
+                    <td>Location</td>
+                    <td>Options</td>
+                </tr>
+            </thead>
+            <tbody>
+                {% for event in events %}
+                <tr>
+                    <td><a href="">{{ event.title }}</a></td>
+                    <td>{{ event.start }}</td>
+                    <td>{{ event.place }}</td>
+                    <td>
+                        <ul>
+                            <li><a href="">Edit</a></li>
+                            <li><a href="">Delete</a></li>
+                        </ul>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </section>
+</div>
+{% endblock %}

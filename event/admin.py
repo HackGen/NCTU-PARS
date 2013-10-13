@@ -9,7 +9,7 @@ class EventAdmin(admin.ModelAdmin):
     Event admin class
     """
     # search_fields = ('name', 'id')
-    # list_filter = ('creation_date','modification_date') 
+    # list_filter = ('creation_date','modification_date')
     # list_display = ('id', 'name')
     pass
 
@@ -20,9 +20,9 @@ class MemberAdmin(admin.ModelAdmin):
     Member admin class
     """
     # search_fields = ('name', 'id')
-    # list_filter = ('creation_date','modification_date') 
+    # list_filter = ('creation_date','modification_date')
     # list_display = ('id', 'name')
     pass
 
 admin.site.register(Member, MemberAdmin)
-
+admin.site.register(TempEvent)

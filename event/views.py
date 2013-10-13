@@ -6,8 +6,8 @@ from django.core.paginator import Paginator, InvalidPage, EmptyPage
 from django.shortcuts import get_object_or_404
 
 from models import *
-from forms import *
-
+#from forms import EventForm
+#from forms import MemberForm
 
 
 def view_event(request, event_id):
@@ -64,7 +64,7 @@ def form_event(request, event_id):
     return render_to_response('event_form.html',
                               context,
                               context_instance=RequestContext(request))
-        
+
 
 
 
@@ -122,6 +122,8 @@ def form_member(request, member_id):
     return render_to_response('member_form.html',
                               context,
                               context_instance=RequestContext(request))
-        
 
 
+@login_required(login_url='/')
+def tempevent(request):
+    return render_to_response('dashboard.html', {'event' : event}, context_instance=RequestContext(request))
