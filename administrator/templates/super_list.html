@@ -1,0 +1,28 @@
+{%extends "super_base.html" %}
+{% block content %}
+<div>
+    <div class="navigation">
+    {% if super_list.has_next %}
+        <div><a href="?page={{ super_list.next_page_number }}" >&laquo; Next Entries </a></div>												
+    {% endif %}
+    {%if super_list.has_previous %}
+        <div><a href="?page={{ super_list.previous_page_number }}" >Previous Entries &raquo;</a></div>
+    {% endif %}
+    </div>
+    <ul>
+        {% for object in super_list.object_list %}
+        <li>
+            <a href="{{ object.get_absolute_url }}">super  {{ object.id }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+    <div class="navigation">
+    {% if super_list.has_next %}
+        <div><a href="?page={{ super_list.next_page_number }}" >&laquo; Next Entries </a></div>												
+    {% endif %}
+    {%if super_list.has_previous %}
+        <div><a href="?page={{ super_list.previous_page_number }}" >Previous Entries &raquo;</a></div>
+    {% endif %}
+    </div>
+</div>
+{% endblock content %}

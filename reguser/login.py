@@ -14,7 +14,7 @@ def login_user(request):
         if user is not None:
             if user.is_active:
                 login(request, user)
-                return HttpResponseRedirect('/main/')
+                return HttpResponseRedirect('/dashboard')
             else
-                return HttpResponseRedirect('/error/')
+                return HttpResponseRedirect('/')
     return render_to_response('index.html', context_instance=RequestContext(request))

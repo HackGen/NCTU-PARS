@@ -21,18 +21,23 @@
               <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="../">PARS</a>
+              <a class="navbar-brand" href="/">PARS</a>
             </div>
 
             <div class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
-                <li><a href="../about/">About</a></li>
-                <li><a href="../contact/">Contact</a></li>
+                <li><a href="/about/">About</a></li>
+                <li><a href="/contact/">Contact</a></li>
               </ul>
-
-              <ul class="nav navbar-nav navbar-right">
-                <li><a href="../signup/">Signup</a></li>
-              </ul>
+                  <ul class="nav navbar-nav navbar-right">
+              {% if user.is_authenticated %}
+                    <li><a href="/logout">Loout</a></li>
+                    <li>{{ user.username }}</li>
+              {% else %}
+                    <li><a href="/signup/">Signup</a></li>
+                    <li><a href="/">Login</a></li>
+              {% endif %}
+                  </ul>
             </div>
         </div>
     </div>

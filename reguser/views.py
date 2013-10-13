@@ -23,6 +23,7 @@ def signup(request):
     else:
         form = RegForm()
 
+    #form.fields['username'].help_text = 'foo'
     for field in form.fields.keys():
         field_obj = form.fields[field]
 
@@ -48,11 +49,9 @@ def RegLogin(request):
         if user is not None:
             if user.is_active:
                 login(request, user)
-                #WTD
-                return HttpResponseRedirect('/signup/')
+                return HttpResponseRedirect('/dashboard')
         else:
-            #WTD
-            return HttpResponseRedirect('/signup/')
+            return HttpResponseRedirect('/signup')
     return render_to_response('index.html', {'user': request.user}, context_instance=RequestContext(request))
 
 def RegLogout(request):

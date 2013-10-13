@@ -1,0 +1,51 @@
+{%extends "event_base.html" %}
+{% block content %}
+<div>
+    
+    <p>
+        <span>semester_id: </span>
+        {{ event.semester_id }}
+    </p> 
+    
+    <p>
+        <span>title: </span>
+        {{ event.title }}
+    </p> 
+    
+    <p>
+        <span>place: </span>
+        {{ event.place }}
+    </p> 
+    
+    <p>
+        <span>info: </span>
+        {{ event.info }}
+    </p> 
+    
+    <p>
+        <span>start: </span>
+        {{ event.start }}
+    </p> 
+    
+    <p>
+        <span>end: </span>
+        {{ event.end }}
+    </p> 
+    
+    <p>
+        <span>signup_start: </span>
+        {{ event.signup_start }}
+    </p> 
+    
+    <p>
+        <span>signup_end: </span>
+        {{ event.signup_end }}
+    </p> 
+    
+    <p>
+        <span>max_attendees: </span>
+        {{ event.max_attendees }}
+    </p> 
+    
+</div>
+{% endblock content %}
